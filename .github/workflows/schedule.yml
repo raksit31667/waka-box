@@ -10,6 +10,8 @@ on:
 jobs:
   update-gist:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
     steps:
       - uses: actions/checkout@master
       - name: Update gist
@@ -19,4 +21,4 @@ jobs:
           GIST_ID: d4fac355a684526684cd8c4f9befa8ef
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
       - name: Keepalive Workflow
-        uses: gautamkrishnar/keepalive-workflow@1.1.0
+        uses: liskin/gh-workflow-keepalive@v1
